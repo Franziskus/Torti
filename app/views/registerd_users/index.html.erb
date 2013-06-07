@@ -1,0 +1,31 @@
+<h1>Listing registerd_users</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Registerdsince</th>
+    <th>Type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @registerd_users.each do |registerd_user| %>
+  <tr>
+    <td><%= registerd_user.id %></td>
+    <td><%= registerd_user.email %></td>
+    <td><%= registerd_user.password %></td>
+    <td><%= registerd_user.registerdSince %></td>
+    <td><%= registerd_user.type %></td>
+    <td><%= link_to 'Show', registerd_user %></td>
+    <td><%= link_to 'Edit', edit_registerd_user_path(registerd_user) %></td>
+    <td><%= link_to 'Destroy', registerd_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Registerd user', new_registerd_user_path %>

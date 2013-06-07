@@ -1,1 +1,17 @@
-Test
+rails generate scaffold RegisterdUser id:integer email:string password:integer registerdSince:timestamp type:string
+
+rails generate scaffold Statistic id:integer student_fk:integer
+rails destroy scaffold Statistic
+
+rails generate scaffold Answer id:integer text:string isRight: boolean howOftenChosen: integer
+rails destroy scaffold Answer 
+has_and_belongs_to_many :statistics
+
+
+rubygems_integration.rb:214:in `block in replace_gem': Please install the sqlite3 adapter: `gem install activerecord-sqlite3-adapter`
+
+gem install activerecord-sqlite3-adapter
+
+bundle config local.GEM_NAME /path/to/local/git/repository
+
+%CommonProgramFiles%\Microsoft Shared\Windows Live;C:\Program Files (x86)\texlive\2012\bin\win32;C:\msysgit\msysgit\bin;C:\msysgit\msysgit\mingw\bin;D:\Programme\vim72
