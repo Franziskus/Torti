@@ -4,6 +4,7 @@ Torti::Application.routes.draw do
 
   resources :statistics
 
+  resources :register_student, :only => [:new, :create]
 
   resources :registerd_users
 

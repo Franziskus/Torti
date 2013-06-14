@@ -1,3 +1,3 @@
 class Student < RegisterdUser
-  belongs_to :statistic
+  has_one :statistic
 end

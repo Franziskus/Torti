@@ -1,0 +1,2 @@
+module RegisterStudentHelper
+end
