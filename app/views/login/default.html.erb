@@ -1,0 +1,10 @@
+<h1>Main Page</h1>
+<p>Find me in app/views/login/default.html.erb</p>
+<%if session[:user].is_a?(Student) %>
+<!-- Student stuff here -->
+<%= link_to 'Statistic', statistics_path %>
+<%else %>
+<!-- do dozent stuff here -->
+
+<%end %><br />
+<%= link_to 'Logout', login_logout_path %>

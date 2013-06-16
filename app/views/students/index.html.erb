@@ -1,0 +1,23 @@
+<h1>Listing registerd_users</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Registerdsince</th>
+    <th>Type</th>
+  </tr>
+
+<% @re_st.each do |registerd_user| %>
+  <tr>
+    <td><%= registerd_user.id %></td>
+    <td><%= registerd_user.email %></td>
+    <td><%= registerd_user.password %></td>
+    <td><%= registerd_user.registerdSince %></td>
+    <td><%= registerd_user.type %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

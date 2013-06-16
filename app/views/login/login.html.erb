@@ -1,0 +1,18 @@
+<h1>Login</h1>
+You have to login now!<br />
+<%=@error %><br />
+<form action="" method="get" ><!-- bug in ruby mit post http://www.arailsdemo.com/posts/44 -->
+	<table>
+		<tr>
+			<td>Username:</td><td><input name="username" /></ td>
+		</ tr>
+		<tr>
+			<td>Password:</td><td><input type="password" name="password" /></td>
+		</ tr>
+		<tr>
+			<td><input type="hidden" name="goto" value="<%=session[:beforeLogin]%>"></td><td><input type="submit" /></td>
+		</ tr>
+	</ table>
+</form>
+<%= link_to 'Register', new_student_path %>
+

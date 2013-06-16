@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20130607204825) do
 
   create_table "registerd_users", :force => true do |t|
     t.string   "email"
-    t.integer  "password"
+    t.string   "password"
     t.datetime "registerdSince"
     t.string   "type"
     t.datetime "created_at",     :null => false

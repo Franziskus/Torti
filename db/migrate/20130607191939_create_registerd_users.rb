@@ -3,7 +3,7 @@ class CreateRegisterdUsers < ActiveRecord::Migration
     create_table :registerd_users do |t|
       t.integer :id
       t.string :email
-      t.integer :password
+      t.string :password
       t.timestamp :registerdSince
       t.string :type
 

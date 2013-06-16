@@ -1,10 +1,25 @@
 Torti::Application.routes.draw do
+  get "login/login"
+  post "login/login"
+  get "login/logout"
+  post "login/logout"
+  get "login/default"
+
   resources :answers
 
 
-  resources :statistics
+  resources :statistics, :only => [:index]
 
-  resources :register_student, :only => [:new, :create]
+  resources :students #, :only => [:new, :create, :index]
+
+  #get 'students/:id/show_validation_link' => 'students#show_validation_link' , :as => "validation_link"
+
+  get 'students/:id/validate' => 'students#validate' , :as => "validate"
+
+  #scope :module => "students_path" do
+  #  resources :register_student
+  #end
+
 
   resources :registerd_users
 
