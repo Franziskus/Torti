@@ -1,5 +1,9 @@
 Torti::Application.routes.draw do
 
+  get "set_language/english"
+
+  get "set_language/german"
+
   scope "(:locale)", :locale => /en|de/ do
     root :to => 'login#login'
     get "login/login"

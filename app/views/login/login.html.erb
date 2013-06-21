@@ -1,10 +1,16 @@
 <h1>Login</h1>
-You have to login now!<br />
+<p>
+<%= link_to_unless I18n.locale == :en, "English", set_language_english_path %>
+|
+<%= link_to_unless I18n.locale == :de, "Deutsch", set_language_german_path %>
+</p>
+<%=t ('.You_have_to_login_now') %>
+<%= t 'login.login.You_have_to_login_now' %><br />
 <%=@error %><br />
 <form action="" method="get" ><!-- bug in ruby mit post http://www.arailsdemo.com/posts/44 -->
 	<table>
 		<tr>
-			<td>Username:</td><td><input name="username" /></ td>
+			<td>E-mail:</td><td><input name="username" /></ td>
 		</ tr>
 		<tr>
 			<td>Password:</td><td><input type="password" name="password" /></td>
@@ -14,8 +20,5 @@ You have to login now!<br />
 		</ tr>
 	</ table>
 </form>
-<p><b>I18n.locale:</b>
-<%= I18n.locale %>
-</p>
 <%= link_to 'Register', new_student_path %>
 
