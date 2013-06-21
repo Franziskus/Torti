@@ -8,7 +8,7 @@ class StatisticsController < ApplicationController
       session[:beforeLogin] = :statistic;
       redirect_to :login_login;
     end
-    @statistic = Statistic.find_by_student_id(session[:user].id)
+    @statistic = session[:user].statistic
 
     respond_to do |format|
       format.html # show.html.erb
