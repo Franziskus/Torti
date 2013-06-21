@@ -50,7 +50,19 @@ class StudentsController < ApplicationController
     @re_st.password = pass
     @re_st.email = (params[:email])
     @re_st.registerdSince = Time.at(-Random.rand(10));
-    @re_st.create_statistic()
+    @personalSt = @re_st.create_statistic()
+    # Add Dummy Answers here
+    @a1 = Answer.new
+    @a1.isRight = true;
+    @a2 = Answer.new
+    @a2.isRight = true;
+    @a3 = Answer.new
+    @a3.isRight = false;
+
+    @personalSt.answers.push(@a1)
+    @personalSt.answers.push(@a2)
+    @personalSt.answers.push(@a3)
+
     respond_to do |format|
       if @re_st.save
         #format.html { redirect_to @re_st, notice: 'Registerd user was successfully created.' }

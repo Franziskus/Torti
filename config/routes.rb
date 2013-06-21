@@ -1,4 +1,15 @@
 Torti::Application.routes.draw do
+
+  scope "(:locale)", :locale => /en|de/ do
+    root :to => 'login#login'
+    get "login/login"
+  end
+
+    scope "(:locale)", :locale => /en|de/ do
+    root :to => 'login#default'
+    get "login/default"
+  end
+
   get "login/login"
   post "login/login"
   get "login/logout"

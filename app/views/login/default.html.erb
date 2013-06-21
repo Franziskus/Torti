@@ -1,5 +1,10 @@
 <h1>Main Page</h1>
 <p>Find me in app/views/login/default.html.erb</p>
+
+<%if session[:user] != nil %>
+-=<%= session[:user].email %>=-
+<%end %>
+
 <%if session[:user].is_a?(Student) %>
 <!-- Student stuff here -->
 <%= link_to 'Statistic', statistics_path %>
@@ -7,4 +12,8 @@
 <!-- do dozent stuff here -->
 
 <%end %><br />
+
+<p><b>I18n.locale:</b>
+<%= I18n.locale %>
+</p>
 <%= link_to 'Logout', login_logout_path %>

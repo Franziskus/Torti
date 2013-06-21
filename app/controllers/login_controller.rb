@@ -1,6 +1,15 @@
 require 'digest/md5'
 
 class LoginController < ApplicationController
+
+  before_filter :set_locale
+
+  private
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  public
   def login
     @error = ""
     if(params[:username] != nil)
@@ -31,7 +40,7 @@ class LoginController < ApplicationController
     end
   end
 
-   def logout
-     session[:user] = nil
+  def logout
+     session.delete(:user)
   end
 end

@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(:version => 20130607204825) do
     t.datetime "updated_at",     :null => false
   end
 
+  create_table "answers_statistics", :id => false, :force => true do |t|
+    t.integer "answer_id"
+    t.integer "statistic_id"
+  end
+
+  add_index "answers_statistics", ["statistic_id", "answer_id"], :name => "index_answers_statistics_on_statistic_id_and_answer_id"
+
   create_table "registerd_users", :force => true do |t|
     t.string   "email"
     t.string   "password"
