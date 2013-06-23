@@ -5,7 +5,7 @@
 -=<%= session[:user].email %>=-
 <%end %>
 
-<%if session[:user].is_a?(Student) %>
+<%if @user.is_a?(Student) %>
 <!-- Student stuff here -->
 <%= link_to 'Statistic', statistics_path %>
 <%else %>
