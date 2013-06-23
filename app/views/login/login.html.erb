@@ -4,19 +4,18 @@
 |
 <%= link_to_unless I18n.locale == :de, "Deutsch", set_language_german_path %>
 </p>
-<%=t ('.You_have_to_login_now') %>
-<%= t 'login.login.You_have_to_login_now' %><br />
+<%=t ('.You_have_to_login_now') %><br />
 <%=@error %><br />
 <form action="" method="get" ><!-- bug in ruby mit post http://www.arailsdemo.com/posts/44 -->
 	<table>
 		<tr>
-			<td>E-mail:</td><td><input name="username" /></ td>
+			<td><%=t ('.email') %>:</td><td><input name="username" /></ td>
 		</ tr>
 		<tr>
-			<td>Password:</td><td><input type="password" name="password" /></td>
+			<td><%=t ('.password') %>:</td><td><input type="password" name="password" /></td>
 		</ tr>
 		<tr>
-			<td><input type="hidden" name="goto" value="<%=session[:beforeLogin]%>"></td><td><input type="submit" /></td>
+			<td><input type="hidden" name="goto" value="<%=session[:beforeLogin]%>"></td><td><input type="submit" value="<%=t ('.login') %>"/></td>
 		</ tr>
 	</ table>
 </form>

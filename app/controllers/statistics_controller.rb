@@ -4,11 +4,8 @@ class StatisticsController < ApplicationController
   # GET /statistics/1
   # GET /statistics/1.json
   def index
-    if(session[:user] == nil)
-      session[:beforeLogin] = :statistic;
-      redirect_to :login_login;
-    end
-    @statistic = session[:user].statistic
+    @user = getUser(:statistic);
+    @statistic = @user.statistic
 
     respond_to do |format|
       format.html # show.html.erb
