@@ -40,3 +40,14 @@ gem 'jquery-rails', '>= 1.0.12'
 
 # To use debugger
 # gem 'debugger'
+
+# Use gruff
+# gem "rmagick", :require => 'RMagick'
+# gem "gruff", "~> 0.3.7"
+
+# Use rchart
+# gem 'rchart', '~> 2.0.9'
+
+# Use chunkypng
+gem "chunky_png", "~> 1.2.8"
+

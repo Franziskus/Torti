@@ -1,5 +1,7 @@
 Torti::Application.routes.draw do
 
+  get "pie/genPie"
+
   get "set_language/english"
 
   get "set_language/german"

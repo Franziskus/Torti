@@ -2,15 +2,15 @@ class Statistic < ActiveRecord::Base
   attr_accessible :id, :student_id
   has_and_belongs_to_many :answers
   belongs_to :student, :foreign_key => "student_id"
-  
+
   public
- 	def answersCount
+ 	def answersCount(value)
  		count = 0
  		for i in 0...answers.length
-  			if (answers[i].isRight)
+  			if (answers[i].isRight == value)
   				count+=1
   			end
-		end		
+		end
 		return count
 	end
   end

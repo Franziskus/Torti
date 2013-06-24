@@ -3,11 +3,14 @@
 <p>
   <b>Id:</b>
   <%= @statistic.id %>
-  Ans: <%= @my_ans %>
+  Right Ans: <%= @my_ans_right %><br/>
+  Wrong Ans: <%= @my_ans_wrong %><br/>
 </p>
 
 <p>
+<img width="200" height="200" src="http://localhost:3000/pie/genPie?a=<%= @my_ans_right %>&b=<%= @my_ans_wrong %>" alt="Statistic"/><br />
   <b>Student fk:</b>
   <%= @statistic.student_id %>
+
 </p>
 <%= link_to 'Default', login_default_path %>
