@@ -62,8 +62,8 @@ class PieController < ApplicationController
       image = ChunkyPNG::Image.from_file('in.png')
       drawLine(50,50,100,50,image)
       drawLine(50,50,@xEnd.round+50,@yEnd.round+50,image)
-      image.save('out.png')
-      send_file 'out.png', :type => 'image/jpeg', :disposition => 'inline'
+      #image.save('out.png')
+      send_data image.to_blob, :type => 'image/jpeg', :disposition => 'inline'
     end
   end
 end
