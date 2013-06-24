@@ -6,7 +6,8 @@ class LoginController < ApplicationController
 
   private
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    I18n.locale = session[:locale] || I18n.default_locale
+    session[:locale] = I18n.locale
   end
 
   public
@@ -20,7 +21,7 @@ class LoginController < ApplicationController
         if(@user.registerdSince.to_i < 1)
           @error = "User needs to validate his E-mail first."
         elsif params[:password] != nil && @user.password == Digest::MD5.hexdigest(params[:password]).to_s
-          session[:user] = @user
+          session[:userId] = @user.id
           if(session[:beforeLogin] == nil)
             redirect_to(:action => 'default')
           else
@@ -34,13 +35,10 @@ class LoginController < ApplicationController
   end
 
   def default
-    if(session[:user] == nil)
-      session[:beforeLogin] = :login_default;
-      redirect_to :login_login;
-    end
+    @user = getUser(:login_default);
   end
 
   def logout
-     session.delete(:user)
+     session.delete(:userId)
   end
 end

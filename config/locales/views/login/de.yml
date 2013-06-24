@@ -1,0 +1,8 @@
+de:
+   login:
+     login:
+        login: 'Anmelden'
+        password: 'Passwort'
+        email: 'E-Mail'
+        register: 'Registieren'
+        You_have_to_login_now: 'Sie müssen sich jetzt anmelden.'

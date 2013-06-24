@@ -1,0 +1,8 @@
+en:
+   login:
+     login:
+        login: 'Login'
+        password: 'Password'
+        email: 'E-Mail'
+        register: 'Register'
+        You_have_to_login_now: 'You have to login now.'
