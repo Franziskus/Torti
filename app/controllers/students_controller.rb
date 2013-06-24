@@ -58,7 +58,7 @@ class StudentsController < ApplicationController
     @a2.isRight = true;
     @a3 = Answer.new
     @a3.isRight = false;
-
+  
     @personalSt.answers.push(@a1)
     @personalSt.answers.push(@a2)
     @personalSt.answers.push(@a3)
